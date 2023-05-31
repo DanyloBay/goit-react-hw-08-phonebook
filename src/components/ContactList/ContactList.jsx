@@ -17,7 +17,6 @@ function ContactList() {
       <List>
         {contacts &&
           filteredContactList.map(({ id, name, number }) => {
-            console.log(filteredContactList);
             return (
               <Item key={id}>
                 <Contact id={id} name={name} number={number} />
