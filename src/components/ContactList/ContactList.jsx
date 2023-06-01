@@ -2,7 +2,7 @@
 import Contact from 'components/Contact/Contact';
 import Loader from 'components/Loader';
 import NotFound from 'components/NotFound';
-import { List, Item } from './ContactList.styled';
+import { List } from './ContactList.styled';
 import { useGetContactsQuery } from 'redux/contacts/contact-api';
 import useFiltredContacts from 'hooks/useFiltredContacts';
 
@@ -18,9 +18,7 @@ function ContactList() {
         {contacts &&
           filteredContactList.map(({ id, name, number }) => {
             return (
-              <Item key={id}>
-                <Contact id={id} name={name} number={number} />
-              </Item>
+              <Contact id={id} name={name} number={number} />
             );
           })}
       </List>

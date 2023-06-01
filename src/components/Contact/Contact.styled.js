@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { FaUser } from 'react-icons/fa';
 
+export const Item = styled.li`
+  margin-bottom: 20px;
+`;
+
 export const Wrapper = styled.div`
   background-color: #fafafa;
   border-radius: 10px;

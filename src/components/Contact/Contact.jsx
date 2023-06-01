@@ -9,18 +9,18 @@ import {
   ButtonList,
   ButtonItem,
   Button,
+  Item,
 } from './Contact.styled';
 import Modal from 'components/Modal';
 import useShowModal from 'hooks/useShowModal';
 import DeletingContact from 'components/DeletingContact';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Contact({ id, name, number }) {
   const { showModal, toggleModal } = useShowModal(false);
-  const navigate = useNavigate();
 
   return (
-    <>
+    <Item>
       {showModal && (
         <Modal onClose={toggleModal} title={name}>
           <DeletingContact id={id} name={name} toggleModal={toggleModal} />
@@ -42,13 +42,15 @@ function Contact({ id, name, number }) {
             </Button>
           </ButtonItem>
           <ButtonItem>
-            <Button type="button" onClick={() => navigate(`edit/${id}`)}>
-              <FaUserEdit />
-            </Button>
+            <Link to={`edit/${id}`}>
+              <Button type="button">
+                <FaUserEdit />
+              </Button>
+            </Link>
           </ButtonItem>
         </ButtonList>
       </Wrapper>
-    </>
+    </Item>
   );
 }
 

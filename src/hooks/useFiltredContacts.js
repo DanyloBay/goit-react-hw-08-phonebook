@@ -1,6 +1,6 @@
 import { useGetContactsQuery } from 'redux/contacts/contact-api';
 import { useSelector } from 'react-redux';
-import { getFilter } from 'redux/contacts/contact-selectors';
+import { getFilter } from 'redux/contacts/filter-selectors';
 
 function useFiltredContacts() {
   const { data: contacts } = useGetContactsQuery();
